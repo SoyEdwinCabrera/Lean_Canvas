@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lean Canvas Interactivo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        
+    </header>
+    <h1>Lean Canvas Interactivo</h1>
+    <div class="lean-canvas">
+        <!-- Primera Fila -->
+        <div class="row">
+            <div class="card large" id="problema" onclick="flipCard(this)">
+                <div class="front"><span>Problema</span></div>
+                <div class="back">Descripción del Problema</div>
+            </div>
+            <div class="column medium">
+                <div class="card small" id="solucion" onclick="flipCard(this)">
+                    <div class="front">Solución</div>
+                    <div class="back">Descripción de la Solución</div>
+                </div>
+                <div class="card small" id="metricas-clave" onclick="flipCard(this)">
+                    <div class="front">Métricas Clave</div>
+                    <div class="back">Descripción de Métricas Clave</div>
+                </div>
+            </div>
+            <div class="card large" id="propuesta-valor" onclick="flipCard(this)">
+                <div class="front">Propuesta de Valor Única</div>
+                <div class="back">Descripción de la Propuesta de Valor</div>
+            </div>
+            <div class="column medium">
+                <div class="card small" id="ventaja-competitiva" onclick="flipCard(this)">
+                    <div class="front">Ventaja Competitiva</div>
+                    <div class="back">Descripción de la Ventaja Competitiva</div>
+                </div>
+                <div class="card small" id="canales" onclick="flipCard(this)">
+                    <div class="front">Canales</div>
+                    <div class="back">Descripción de Canales</div>
+                </div>
+            </div>
+            <div class="card large" id="segmentos-clientes" onclick="flipCard(this)">
+                <div class="front">Segmentos de Clientes</div>
+                <div class="back">Descripción de Segmentos de Clientes</div>
+            </div>
+        </div>
+        
+        <!-- Segunda Fila -->
+        <div class="row">
+            <div class="card full" id="estructura-costes" onclick="flipCard(this)">
+                <div class="front">Estructura de Costes</div>
+                <div class="back">Descripción de la Estructura de Costes</div>
+            </div>
+            <div class="card full" id="fuentes-ingresos" onclick="flipCard(this)">
+                <div class="front">Fuentes de Ingresos</div>
+                <div class="back">Descripción de las Fuentes de Ingresos</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
