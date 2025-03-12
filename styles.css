@@ -11,12 +11,48 @@ body {
     min-height: 100vh;
     background-color: #f4f4f4;
     padding: 20px;
+    box-sizing: border-box;
+    background-color: #000000;
 }
+
+.header{
+    padding: 2% 0% 0% 15%;
+}
+
+.header__menu{
+    display: flex;
+    gap: 100px;
+}
+.header__menu__link{
+    
+    font-size: 1.5rem;
+    font-weight: 200;
+    text-decoration: none;
+    color: #22D4FD;
+
+}
+
 
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
-    align-self: center;
+    text-align: center;
+    color: #22D4FD;
+}
+
+.explaining__text {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+     
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #22D4FD;
 }
 
 .lean-canvas {
@@ -36,8 +72,8 @@ h1 {
 
 .card {
     position: relative;
-    width: 100%;
-    min-height: 200px; /* Altura mínima para las tarjetas */
+    width: 90%;
+    min-height: 600px; /* Altura mínima para las tarjetas */
     transform-style: preserve-3d;
     transition: transform 0.5s;
     background: #f9f9f9;
@@ -52,7 +88,8 @@ h1 {
 }
 
 .card.small {
-    min-height: 95px; /* Altura para tarjetas pequeñas */
+    min-height: 300px; /* Altura para tarjetas pequeñas */
+    width: 100%;
 }
 
 .column {
@@ -102,6 +139,20 @@ header {
     margin-bottom: 20px;
 }
 
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+.footer{
+    color:var(--color-primaria);
+    background-color: #22D4FD;
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
 /* Media queries para responsividad */
 @media (max-width: 786px) {
     .row {
@@ -112,3 +163,4 @@ header {
         min-height: 100px;
     }
 }
+
