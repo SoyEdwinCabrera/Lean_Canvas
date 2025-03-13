@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -15,8 +18,13 @@ body {
     background-color: #000000;
 }
 
+b{
+    color: ;
+}
+
 .header{
-    padding: 2% 0% 0% 15%;
+    padding: 2% 0% 5% 15%;
+    
 }
 
 .header__menu{
@@ -29,30 +37,91 @@ body {
     font-weight: 200;
     text-decoration: none;
     color: #22D4FD;
-
+}
+.header__menu__link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #22D4FD;
+    transition: width 0.3s ease;
 }
 
-
+.header__menu__link:hover::after {
+    width: 100%;
+}
+    
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
     color: #22D4FD;
+    padding-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .explaining__text {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 20px;
     text-align: center;
     color: #ffffff;
-     
+    padding: 0 14% 100px 14%;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    
 }
+
+.explaining__text__empresa {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-direction: row;
+    gap: 5rem;
+    padding: 0 17%  150px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease;
+  
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.explaining__image{
+    width: 40%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.explaining__image:hover {
+    transform: scale(1.02);
+}
+
 
 h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
     color: #22D4FD;
+    padding-bottom: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .lean-canvas {
@@ -62,6 +131,7 @@ h2 {
     max-width: 1200px;
     margin: auto;
     width: 100%;
+    padding-bottom: 100px;
 }
 
 .row {
@@ -81,6 +151,14 @@ h2 {
     text-align: center;
     cursor: pointer;
     perspective: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(34, 212, 253, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(34, 212, 253, 0.2);
 }
 
 .card.large {
@@ -121,12 +199,21 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
     background: #f9f9f9;
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 15px;
     top: 0;
     left: 0;
+    border-radius: 10px;
+    padding: 20px;
+    top: 0;
+    left: 0;
+}
+
+.card .front {
+    font-size: 1.1rem; /* Tamaño para el título frontal */
+    font-weight: 600;
 }
 
 .card .back {
@@ -146,21 +233,241 @@ footer {
 .footer{
     color:var(--color-primaria);
     background-color: #22D4FD;
-    padding: 24px;
     text-align: center;
     font-family: var(--fuente-krona);
     font-size: 1.5rem;
     font-weight: 400;
+    ackground: linear-gradient(to right, #22D4FD, #1fa8c9);
+    color: #fff;
+    padding: 2rem;
+    margin-top: auto;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
 }
 
-/* Media queries para responsividad */
-@media (max-width: 786px) {
-    .row {
+@media (max-width: 1250px) and (min-width: 876px) {
+    
+       
+    .card {
+        width: 100%;
+        min-height: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .card .back p {
+            margin: 0;
+            width: 100%;
+        }
+    
+        /* Ajuste para mejorar la legibilidad */
+    .card .back {
+        line-height: 1.4;
+        padding: 25px;
+    }
+    
+        /* Asegurar que el contenido no se desborde */
+    .lean-canvas {
+        overflow: hidden;
+    }
+    
+    .row:last-child {
+        min-height: 200px;
+    }
+    
+    .row:last-child .card {
+        min-height: 200px;
+    }
+        
+    .card.large {
+        flex: 2;
+        width: 100%;
+                min-height: 300px;
+                margin-bottom: 20px;
+    }
+    
+    .column {
+        display: flex;
         flex-direction: column;
     }
     
-    .card {
-        min-height: 100px;
+    .column.medium {
+        flex: 1.5;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .card.small {
+        width: 100%;
+        min-height: 250px;
+        margin-bottom: 20px;
+    }
+    
+    .card.full {
+        flex: 1;
+        width: 100%;
+        min-height: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .card .front, 
+    .card .back {
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+    
+    .column, 
+    .column.medium {
+        width: 100%;
+        gap: 20px;
+    }
+    
+    .explaining__text__empresa {
+        padding: 0 10% 10%;
+        gap: 3rem;
+    }
+
+    .explaining__image {
+        width: 45%;
+    }
+
+    .header__menu {
+        gap: 60px; /* Reduce el espacio entre elementos del menú */
+    }
+
+    .row {
+        display: column;
+        width: 100%;
+        gap: 20px; /* Ajusta el espacio entre cards */
+    }
+
+    /* Ajusta el tamaño de fuente para mejor legibilidad */
+    .explaining__text {
+        font-size: 1.2rem;
+        padding: 0 10% 5%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    .lean-canvas {
+        display: flex;
+        flex-direction: column;
+        padding: 5% 20px;
+        max-width: 800%;
+        padding-bottom: 10%;
+        margin: 0  auto;
     }
 }
 
+@media (max-width: 876px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .card,
+    .card.large,
+    .card.small,
+    .card.full {
+        width: 100%;
+        min-height: 250px;
+        margin-bottom: 15px;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .card .front, 
+    .card .back {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+}
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    
+    .header {
+        padding: 2% 0;
+        width: 100%;
+    }
+    
+    .header__menu {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .card {
+        width: 100%;
+        min-height: auto; /* Permite que la altura sea flexible */
+        height: 300px; /* O el tamaño que prefieras */
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .card.large,
+    .card.small,
+    .card.full {
+        width: 100%;
+        flex: none;
+    }
+
+    .column.medium {
+        flex: none;
+    }
+
+    .explaining__text__empresa {
+        flex-direction: column;
+        padding: 0 5%;
+    }
+
+    .explaining__image {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .header__menu {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding: 0 20px;
+    }
+    
+    .lean-canvas {
+        padding-bottom: 10%;
+    }
+}
+
+@media (max-width: 430px) {
+    .card {
+        height: 250px;
+    }
+
+    .card .front, 
+    .card .back {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .header__menu__link {
+        font-size: 1.2rem;
+    }
+    
+    .lean-canvas {
+        padding-bottom: 10%;
+    }
+}
